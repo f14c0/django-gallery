@@ -95,14 +95,14 @@ USE_TZ = True
 
 
 import dj_database_url
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'GALLERY_DB',
-        'USER': 'gallery_admin',
-        'PASSWORD': 'password$',
-    }
-}
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'GALLERY_DB',
+#        'USER': 'b41da56df47d3f@us-cdbr-iron-east-02.cleardb.net',
+#        'PASSWORD': '1c9e6a96 ',
+#    }
+#}
 DATABASES['default'] = dj_database_url.config()
 
 
