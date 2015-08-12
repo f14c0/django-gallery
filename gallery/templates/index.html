@@ -1,0 +1,13 @@
+<a href="{% url 'create' %}">Create a new image</a>
+{% if image_list %}
+	<ul>
+		{% for image in image_list %}
+			<li>
+				<img src="{{ image.url }}" width="200" />
+				<label>{{ image.name }}</label>
+			</li>
+		{% endfor %}
+	</ul>
+{% else %}
+	<p>No images are available</p>
+{% endif %}
