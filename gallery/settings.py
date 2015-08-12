@@ -105,7 +105,7 @@ DATABASES = {
 #        'PASSWORD': '1c9e6a96 ',
     }
 }
-#DATABASES['default'] = dj_database_url.config()
+DATABASES['default'] = dj_database_url.config()
 
 
 
