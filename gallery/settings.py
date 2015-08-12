@@ -91,8 +91,8 @@ USE_L10N = True
 USE_TZ = True
 
 
-
 ##Un comment to heroku
+import dj_database_url
 DATABASES = {'default': dj_database_url.config(default=os.environ['CLEARDB_DATABASE_URL'])}
 
 
