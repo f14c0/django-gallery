@@ -97,8 +97,8 @@ USE_TZ = True
 import dj_database_url
 DATABASES = {
     'default': {
-          'ENGINE': 'django.db.backends.mysql',
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#          'ENGINE': 'django.db.backends.mysql',
+         'ENGINE': 'django.db.backends.postgresql_psycopg2',
          
 #        'NAME': 'GALLERY_DB',
 #        'USER': 'b41da56df47d3f@us-cdbr-iron-east-02.cleardb.net',
