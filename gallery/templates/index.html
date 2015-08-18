@@ -1,78 +1,27 @@
-<!DOCTYPE html>
-{% load staticfiles %}
+{% extends "base.html" %}
 
+{% block content %}
 
-
-<html lang="en">
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python Gallery</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap-3.3.1/css/bootstrap.min.css' %}" />
-	<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
-    
-</head>
-
-  <body>
-        <nav role="navigation" class="navbar">
-          <div class="container">
-            <div class="page-header">
-                <div class="brand">
-                    <div>
-                        <h1><a href="#" class="home" >IMAGE GALLERY</a></h1>
-                        <small>Django Image Gallery</small>
+<div class="container">
+    <div id="content">
+        <div class="box-gutter"></div>
+        <div class="box-sizer"></div>
+        {% if image_list %}
+            
+            {% for image in image_list %}
+                <div class="box">
+                    <img src="{{image.url}}" title="{{ image.name }}"/>
+                    <div class="image-desc">
+                        <p>{% if image.desc != "" %} {{image.desc}} {% else %}No Description{% endif %}</p>
                     </div>
                 </div>
-                <div id="navbar" class="visible-md-block visible-lg-block">
-                    <ul id="nav" class="nav">
-                      <li class="selected"><a href="/">Home</a></li>
-                      <li><a href="/create">Add Image</a></li>
-                      <li><a href="#">Contact Us</a></li>
-                      <li><a href="#">About</a></li>
-                    </ul>
-                </div>
-                <select id="collapsed-navbar" class="hidden-md hidden-lg">
-                    <option  value="#">Home</option>
-                    <option  value="{% url 'create' %}">Add Image</option>
-                    <option  value="#">Contact Us</option>
-                    <option  value="#">About</option>
-                </select>
-            </div>
-          </div>
-        </nav>
+            {% endfor %}
+            
+        {% else %}
+            <h4>No images are available</h4>
+        {% endif %}
+        
+    </div>
+</div>
 
-        <div class="container">
-            <div id="content">
-                <div class="box-gutter"></div>
-                <div class="box-sizer"></div>
-                {% if image_list %}
-		
-					{% for image in image_list %}
-						<div class="box">
-							<img alt="Agra picture" src="{{ image.url }}" title="{{ image.name }}"/>
-						</div>
-					{% endfor %}
-					
-				{% else %}
-					<h4>No images are available</h4>
-				{% endif %}
-                
-            </div>
-
-            <footer>
-                  Universidad de Los Andes<br />
-            </footer>
-        </div>
-
-    <!-- Javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-
-    <script src="{% static 'js/libs/jquery-1.11.1.min.js' %}" /></script>
-    <script src="{% static 'bootstrap-3.3.1/js/bootstrap.min.js' %}" /></script>
-    <script src="{% static 'js/libs/imagesloaded.3.1.8.min.js' %}" /></script>
-    <script src="{% static 'js/libs/jquery.masonry.3.2.1.min.js' %}" /></script>
-    <script src="{% static 'js/base.js' %}" /></script>
-</body>
-</html>
+{% endblock content %}

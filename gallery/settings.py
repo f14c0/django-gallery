@@ -37,7 +37,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'gallery'
+    'gallery',
+    'menu',
 
 )
 
@@ -91,14 +92,8 @@ USE_L10N = True
 USE_TZ = True
 
 
-##Un comment to heroku
 import dj_database_url
 DATABASES = {'default': dj_database_url.config(default=os.environ['CLEARDB_DATABASE_URL'])}
-
-
-
-
-
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

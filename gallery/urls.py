@@ -21,4 +21,6 @@ urlpatterns = [
 	url(r'^$', views.index, name='index'),
 	url(r'^create/$', views.upload_image_by_url, name='create'),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^contact/$', views.contact, name='contact'),
+    url(r'^about/$', views.about, name='about'),
 ]

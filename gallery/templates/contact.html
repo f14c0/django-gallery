@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div>
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+        <div class="message">
+            {% if messsage_sent == "FAIL" %}
+            <p class="error">Error :( , Try Again</p>
+            {% elif messsage_sent == "OK" %}
+            <p class="success">Success, Message Sent!</p>
+            {% endif %}
+        </div>  
+        <form action="{% url 'contact' %}" method="post" id="contact_form">
+            {% csrf_token %}
+            <label>Name:</label>
+            <input type="text" name="name" required size="35" placeholder="Name"/>
+            <br/>
+            <label>Email: </label>
+            <input type="email" name="email" required size="35" placeholder="Put your email"/>
+            <br/>
+            <label>Telephone number: </label>
+            <input type="text" name="phone" size="35" placeholder="Put your phone number"/>
+            <br/>
+            <label>Comment: </label>
+            <textarea cols="34" rows="5" name="comment" form ="contact_form"></textarea>
+            <br/>
+            <div>
+                <input  class="button message" type="submit" value="Save" />
+            </div>  
+        </form>
+    </div>
+</div>
+
+{% endblock content %}

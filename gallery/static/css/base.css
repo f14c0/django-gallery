@@ -28,6 +28,7 @@ body {
     color: #393939;
     font-size: 16px;
     padding: 10px;
+    font-family: 'TeXGyreCursorRegular', Arial, sans-serif;
 }
 img {
     max-width: 100%;
@@ -85,7 +86,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #content .box {
-  width: 50%;
+  width: 100%;
   padding: 6px;
   display: inline-block;
   vertical-align: top;
@@ -109,7 +110,7 @@ footer {
 }
 
 @media screen and (min-width: 992px) {
-  #content .box { width: 20%; }
+  #content .box { width: 33%; }
 }
 
 .nav .selected{
@@ -117,11 +118,12 @@ footer {
   text-decoration: underline;
 }
 
-form label,form input{
+form label,form input, form textarea{
   display: block;
   font-family: "TeXGyreCursorRegular",Arial,sans-serif;
 }
-input{
+
+input,form textarea{
   border-radius: 0;
   border:solid 1px;
   
@@ -142,4 +144,20 @@ input:invalid{
 input:-moz-ui-invalid{
   border:solid 1px red;
   box-shadow:none!important;
+}
+
+
+form#contact_form div:last-child > * {
+  display: inline-block !important;
+}
+.message{
+  font-weight: bold
+}
+
+.message .success{
+  color: green;
+}
+
+.message .error {
+  color: red;
 }
