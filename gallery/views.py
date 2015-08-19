@@ -26,7 +26,7 @@ def upload_image_by_url(request):
 		image 				= Image()
 		image.name 	= request.POST['image_name']
 		image.url		= request.POST['image_url']
-		image.desc		= request.POST['image_url']
+		image.desc		= request.POST['image_desc']
 		image.save()
 		return HttpResponseRedirect(reverse('index'))	
 	else:
